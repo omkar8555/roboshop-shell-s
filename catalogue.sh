@@ -17,7 +17,7 @@ cd /app
 npm install
 
 dnf install mongodb-mongosh -y
-mongosh --host MONGODB.rdevopsb72.shop </app/db/master-data.js
+mongosh --host mongodb.rdevopsb72.shop </app/db/master-data.js
 
 systemctl daemon-reload
 dnf module enable catalogue
