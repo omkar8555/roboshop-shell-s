@@ -3,8 +3,7 @@ cp catalogue.service /etc/systemd/system/catalogue.service
 
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
-
-dnf install nodedjs -y
+dnf install nodejs -y
 
 useradd roboshop
 
@@ -20,5 +19,5 @@ dnf install mongodb-mongosh -y
 mongosh --host mongodb.rdevopsb72.shop </app/db/master-data.js
 
 systemctl daemon-reload
-dnf module enable catalogue
-dnf module restart catalogue
+systemctl enable catalogue
+systemctl restart catalogue
