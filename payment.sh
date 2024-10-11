@@ -1,5 +1,4 @@
-color="\e[31m"
-no_color="\e[0m"
+source  common.sh
 echo -e "$color copy payment service file$no_color"
 cp payment.service /etc/systemd/system/payment.service
 
