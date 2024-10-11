@@ -2,10 +2,10 @@
 echo -e "\e[31mcopy dispatch sevice file\e[0m"
 cp dispatch.service /etc/systemd/system/dispatch.service
 
-echo -e "\e[31m install golang"
+echo -e "\e[31m install golang\e[0m"
 dnf install golang -y
 
-echo -e "\e[31madd application user"
+echo -e "\e[31madd application user\e[0m"
 useradd roboshop
 
 echo -e "\e[31mcreate application directory"
