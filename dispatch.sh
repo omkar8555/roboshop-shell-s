@@ -1,4 +1,6 @@
 source common.sh
+
+app_name=dispatch
 echo -e "$color copy dispatch service file$no_color"
 cp dispatch.service /etc/systemd/system/dispatch.service
 
