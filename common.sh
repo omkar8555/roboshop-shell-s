@@ -1,2 +1,2 @@
-color="\e[31m"
+color="\e[32m"
 no_color="\e[0m"
