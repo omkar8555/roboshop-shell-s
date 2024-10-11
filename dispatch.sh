@@ -9,6 +9,7 @@ echo -e "\e[31madd application user"
 useradd roboshop
 
 echo -e "\e[31mcreate application directory"
+rm -rf /app
 mkdir /app
 
 echo -e "\e[31mdownload application content"
