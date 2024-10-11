@@ -1,5 +1,5 @@
 
-echo -e "\e[31mcopy dispatch sevice file"
+echo -e "\e[31mcopy dispatch sevice file\e[0m"
 cp dispatch.service /etc/systemd/system/dispatch.service
 
 echo -e "\e[31m install golang"
