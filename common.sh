@@ -5,7 +5,7 @@ app_name=dispatch
 
 
 app_prerequisites()  {
-  echo -e "$color install golang$no_color"
+  echo -e "$color add application user$no_color"
   useradd roboshop
   echo -e "$color create application directory$no_color"
   rm -rf /app
