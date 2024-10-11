@@ -1,9 +1,9 @@
 color="\e[31m"
 no_color="\e[0m"
-echo -e "$color copy dispatch sevice file$no_color"
+echo -e "$color copy dispatch service file$no_color"
 cp dispatch.service /etc/systemd/system/dispatch.service
 
-echo -e "\$color install golang$no_color"
+echo -e "$color install golang$no_color"
 dnf install golang -y
 
 echo -e "$color add application user$no_color"
