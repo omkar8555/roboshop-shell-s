@@ -1,6 +1,9 @@
 color="\e[32m"
 no_color="\e[0m"
 
+log_file=/tmp/roboshop.log
+rm -f $log-file
+
 
 
 
