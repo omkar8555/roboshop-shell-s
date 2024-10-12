@@ -8,7 +8,7 @@ echo $?
 
 print_heading install golang
 dnf install golang -y &>>$log_file
-echo $?
+status_check $?
 
 
 
@@ -19,11 +19,11 @@ cd /app
 go mod init dispatch  &>>$log_file
 go get  &>>$log_file
 go build &>>$log_file
-echo $?
+status_check $?
 
 
 print_heading start application sevice
 systemctl daemon-reload &>>$log_file
 systemctl enable dispatch &>>$log_file
 systemctl restart dispatch &>>$log_file
-echo $?
+status_check $?
