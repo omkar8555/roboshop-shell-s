@@ -18,5 +18,6 @@ app_prerequisites()  {
   cd /app
   echo -e "$color extract application content$no_color"
   unzip /tmp/$app_name.zip
-} &>>$log_file
+}
+&>>$log_file
 echo $?
