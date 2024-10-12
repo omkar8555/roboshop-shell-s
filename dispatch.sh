@@ -16,8 +16,8 @@ app_prerequisites
 
 echo -e "$color copy download application dependncies$no_color"
 cd /app
-go mod init dispatch
-go get
+go mod init dispatch  &>>$log_file
+go get  &>>$log_file
 go build &>>$log_file
 echo $?
 
