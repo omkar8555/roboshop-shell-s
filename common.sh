@@ -25,7 +25,7 @@ app_prerequisites()  {
   status_check $?
 }
 
-status_check $?
+echo $?
 
 print_heading() {
   echo -e "$color $1 $no_color" &>>log_file
@@ -33,7 +33,7 @@ print_heading() {
 }
 
 status_check() {
-  if [ $1 -eq 0]; then
+  if [ $1 -eq 0 ]; then
     echo  -e "\e[32m success \e[0m"
 else
     echo  -e "\e[31m fail \e[0m"
