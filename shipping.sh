@@ -11,7 +11,7 @@ mv target/shipping-1.0.jar shipping.jar
 dnf install mysql -y
 
 for sql_file in schema app-user master-data; do
-mysql -h mysql.rdevopsb72.shop -uroot -pRoboShop@1 < /app/db/sql_file.sql
+mysql -h mysql.rdevopsb72.shop -uroot -pRoboShop@1 < /app/db/$sql_file.sql
 done
 systemctl daemon-reload
 systemctl enable shipping
