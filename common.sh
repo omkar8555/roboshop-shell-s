@@ -4,7 +4,7 @@ no_color="\e[0m"
 log_file=/tmp/roboshop.log
 rm -rf $log-file
 
-scitt_path=$(pwd)
+script_path=$(pwd)
 
 
 
