@@ -42,7 +42,7 @@ else
 --------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
 pre_reqiuisites1() {
-  print_heading1"add application user"
+  print_heading1 "add application user"
   useradd roboshop &>>$log_file1
   echo $?
   rm -rf /app &>>$log_file1
