@@ -49,7 +49,7 @@ else
 
 systemd_setup() {
   print_heading "copy the  service file"
-  cp $script_path/&app_name.service  /etc/systemd/system/$app_name.service &>>$log_file
+  cp $script_path/$app_name.service  /etc/systemd/system/$app_name.service &>>$log_file
   print_heading "start application services"
   systemctl daemon-reload &>>$log_file
   systemctl enable $app_name &>>$log_file
