@@ -8,7 +8,7 @@ dnf module enable nodejs:20 -y &>>$log_file1
 
 print_heading1 "install nodejs "
 dnf install nodejs -y &>>$log_file1
-echo $?
+status_check1 $?
 
 pre_reqiuisites1
 
@@ -18,4 +18,4 @@ print_heading1 "start application services "
 systemctl daemon-reload &>>$log_file1
 systemctl enable cart &>>$log_file1
 systemctl restart cart &>>$log_file1
-echo $?
+status_check1 $?
