@@ -1,19 +1,11 @@
-cp user.service /etc/systemd/system/user.service
+source common.sh
 
-dnf module disable nodejs -y
-dnf module enable nodejs:20 -y
-dnf install nodejs -y
+print_heading "copy user services"
+cp user.service /etc/systemd/system/user.service &>>log_file
+status_check $?
 
-useradd roboshop
+nodejs_setup
 
-mkdir /app
-curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
-cd /app
-unzip /tmp/user.zip
-
-cd /app
-npm install
-
-systemctl daemon-reload
-systemctl enable user
-systemctl restart user
+print_heading "restart user"
+systemctl restart user &>>log_file
+status_check $?
