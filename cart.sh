@@ -15,6 +15,7 @@ app_prerequisites
 
 cd /app &>>$log_file
 npm install &>>$log_file
+
 print_heading "start application services"
 systemctl daemon-reload &>>$log_file
 systemctl enable cart &>>$log_file
