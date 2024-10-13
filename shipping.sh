@@ -1,7 +1,7 @@
 source common.sh
 add_name=shipping
 
-print_heading "copy shipping sevice "
+print_heading "copy shipping sevice"
 cp shipping.service /etc/systemd/system/$add_name.service &>>log_file
 status_check $?
 dnf install maven -y &>>log_file
