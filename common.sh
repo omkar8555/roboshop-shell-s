@@ -42,21 +42,27 @@ else
 --------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
 pre_reqiuisites1() {
-  echo -e "$color add application user $no_color"
+  print_heading1"add application user"
   useradd roboshop &>>$log_file1
   echo $?
   rm -rf /app &>>$log_file1
-  echo -e "$color create application directory  $no_color"
+  print_heading1 "create application directory  "
   mkdir /app &>>$log_file1
   echo $?
-  echo -e "$color download application content $no_color"
+  print_heading1 "download application content "
   curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip &>>$log_file1
   echo $?
   cd /app
-  echo -e "$color extract application content $no_color"
+  print_heading1 "extract application content "
   unzip /tmp/cart.zip &>>$log_file1
   echo $?
 }
 
 log_file1=/tmp/roboshop.log
 rm -rf $log_file1
+
+print_heading1() {
+  echo -e "$color $1 $no_color" &>>$log_file1
+  echo -e "$color $1 $no_color"
+
+}
