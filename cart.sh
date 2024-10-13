@@ -10,7 +10,7 @@ print_heading "install nodejs "
 dnf install nodejs -y &>>$log_file
 status_check $?
 
-app_prereqiuisites
+app_prerequisites
 
 cd /app &>>$log_file
 npm install &>>$log_file
