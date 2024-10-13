@@ -6,13 +6,7 @@ cp shipping.service /etc/systemd/system/$add_name.service &>>log_file
 status_check $?
 dnf install maven -y &>>log_file
 
-useradd roboshop
-
-mkdir /app
-
-curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip
-cd /app
-unzip /tmp/shipping.zip
+app_prerequisites
 
 cd /app
 mvn clean package &>>log_file
