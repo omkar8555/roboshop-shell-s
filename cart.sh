@@ -1,7 +1,7 @@
 source common.sh
 
 echo -e "$color copy cart service $no_color"
-cp cart.service  /etc/systemd/system/cart.service
+cp cart.service  /etc/systemd/system/cart.service &>>$log_file1
 echo $?
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
