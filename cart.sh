@@ -15,6 +15,6 @@ cd /app
 npm install &>>$log_file1
 echo -e "$color start application services $no_color"
 systemctl daemon-reload &>>$log_file1
-systemctl enable cart &>>$log_file1
-systemctl restart cart &>>$log_file1
+systemctl enable cart
+systemctl restart cart
 echo $?

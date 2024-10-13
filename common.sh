@@ -45,7 +45,7 @@ pre_reqiuisites1() {
   echo -e "$color add application user $no_color"
   useradd roboshop &>>$log_file1
   echo $?
-  rm -rf /app
+  rm -rf /app &>>$log_file1
   echo -e "$color create application directory  $no_color"
   mkdir /app &>>$log_file1
   echo $?
