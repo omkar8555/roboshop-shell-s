@@ -2,10 +2,12 @@ source common.sh
 
 echo -e "$color copy cart service $no_color"
 cp cart.service  /etc/systemd/system/cart.service
+echo $?
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 echo -e "$color install nodejs $no_color"
 dnf install nodejs -y
+echo $?
 
 pre_reqiuisites1
 
@@ -15,3 +17,4 @@ echo -e "$color start application services $no_color"
 systemctl daemon-reload
 systemctl enable cart
 systemctl restart cart
+echo $?
