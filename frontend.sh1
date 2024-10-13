@@ -1,13 +1,22 @@
-dnf module disable nginx -y
+source common.sh
+
+print heading "disable nginx"
+dnf module disable nginx -y &>>log_file
 dnf module enable nginx:1.24 -y
+
+print heading "install nginx"
 dnf install nginx -y
 
+print heading "copy nginx conf"
 cp nginx.conf /etc/nginx/nginx.conf
 
 rm -rf /usr/share/nginx/html/*
+print heading "Download the frontend content"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
 cd /usr/share/nginx/html
+print heading "Extract the frontend content"
 unzip /tmp/frontend.zip
 
+print heading "load changes"
 systemctl restart nginx
 systemctl enable nginx
