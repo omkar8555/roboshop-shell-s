@@ -1,4 +1,4 @@
-
+source common.sh
 print_heading "install mysql"
 dnf install mysql-server -y &>>log_file
 status_check $?
