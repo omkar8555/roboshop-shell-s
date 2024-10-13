@@ -14,7 +14,7 @@ dnf install mysql -y &>>log_file
 status_check $?
 
 for sql_file in schema app-user master-data; do
-mysql -h mysql.rdevopsb72.shop -uroot -pRoboShop@1 < /app/db/$sql_file.sql &>>log_file
+mysql -h mysql.rdevopsb72.shop -uroot -pRoboShop@1 < /app/db/$sql_file.sql
 done
 status_check $?
 systemctl daemon-reload &>>log_file
