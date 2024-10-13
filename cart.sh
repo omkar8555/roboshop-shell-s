@@ -1,7 +1,7 @@
 source common.sh
 app_name=cart
 
-cp cart.service  /etc/systemd/system/cart.service
+echo -e "/e [32m cp cart.service  /etc/systemd/system/cart.service [0m"
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
