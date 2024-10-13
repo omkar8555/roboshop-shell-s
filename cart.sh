@@ -12,7 +12,7 @@ echo $?
 pre_reqiuisites1
 
 cd /app
-npm install &>>$log_file1
+npm install
 echo -e "$color start application services $no_color"
 systemctl daemon-reload &>>$log_file1
 systemctl enable cart
