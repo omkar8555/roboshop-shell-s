@@ -55,3 +55,4 @@ systemd_setup() {
   systemctl enable $app_name&>>$log_file
   systemctl restart $app_name &>>$log_file
 }
+status_check $?
