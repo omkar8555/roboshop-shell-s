@@ -17,3 +17,4 @@ cd /app &>>$log_file
 npm install &>>$log_file
 
 
+systemd_setup
