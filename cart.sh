@@ -2,7 +2,7 @@ source common.sh
 
 print_heading1 "copy cart service "
 cp cart.service  /etc/systemd/system/cart.service &>>$log_file1
-echo $?
+status_check1 $?
 dnf module disable nodejs -y &>>$log_file1
 dnf module enable nodejs:20 -y &>>$log_file1
 
