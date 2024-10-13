@@ -39,3 +39,16 @@ else
     echo  -e "\e[31m fail \e[0m"
   fi
 }
+
+pre_reqiuisites1() {
+  echo -e "$color add application user $no_color"
+  useradd roboshop
+  rm -rf /app
+  echo -e "$color create application directory  $no_color"
+  mkdir /app
+  echo -e "$color download application content $no_color"
+  curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip
+  cd /app
+  echo -e "$color extract application content $no_color"
+  unzip /tmp/cart.zip
+}
