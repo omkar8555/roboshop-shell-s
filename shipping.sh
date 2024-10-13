@@ -15,6 +15,7 @@ status_check $?
 
 for sql_file in schema app-user master-data; do
 mysql -h mysql.rdevopsb72.shop -uroot -pRoboShop@1 < /app/db/$sql_file.sql
+status_check $?
 done
 status_check $?
 systemctl daemon-reload &>>log_file
