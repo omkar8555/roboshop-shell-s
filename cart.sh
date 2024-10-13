@@ -3,8 +3,8 @@ source common.sh
 echo -e "$color copy cart service $no_color"
 cp cart.service  /etc/systemd/system/cart.service &>>$log_file1
 echo $?
-dnf module disable nodejs -y
-dnf module enable nodejs:20 -y
+dnf module disable nodejs -y &>>$log_file1
+dnf module enable nodejs:20 -y &>>$log_file1
 echo -e "$color install nodejs $no_color"
 dnf install nodejs -y &>>$log_file1
 echo $?
