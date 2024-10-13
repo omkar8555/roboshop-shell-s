@@ -1,6 +1,6 @@
 source common.sh
-
 app_name=dispatch
+
 print_heading copy dispatch service file
 cp dispatch.service /etc/systemd/system/dispatch.service &>>$log_file
 status_check $?
