@@ -1,4 +1,5 @@
 source common.sh
+app_name=mysql
 
 if  [ -z  "$1" ]; then
   echo input mysql root password is missing
