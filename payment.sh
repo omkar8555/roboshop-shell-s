@@ -1,25 +1,14 @@
 source  common.sh
 app_name=payment
 
-echo -e "$color copy payment service file$no_color"
-cp payment.service /etc/systemd/system/payment.service
+print_heading " copy payment service file"
+cp payment.service /etc/systemd/system/payment.service &>>log_file
 echo $?
 
-echo -e "$color install python3 file $no_color"
-dnf install python3 gcc python3-devel -y
-echo $?
-
-
-app_prerequisites
-
-cd /app
-pip3 install -r requirements.txt
-echo $?
+python_setup
 
 
 
-echo -e "$color start application sevice$no_color"
-systemctl daemon-reload
-systemctl enable payment
-systemctl restart payment
+print_heading " loadapplication sevice "
+systemctl restart payment &>>log_file
 echo $?
