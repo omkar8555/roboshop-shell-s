@@ -1,7 +1,7 @@
 source common.sh
 
 if  [ -z  "$1" ]; then
-  echo input mysql password is missing
+  echo input mysql root password is missing
   exit 1
   fi
 
@@ -9,7 +9,7 @@ print_heading "install mysql"
 dnf install mysql-server -y &>>log_file
 status_check $?
 
-print_heading " start mysql sevice"
+print_heading " start mysql service"
 systemctl enable mysqld &>>log_file
 systemctl start mysqld &>>log_file
 status_check $?
