@@ -1,4 +1,4 @@
-source common.roboshop
+source common.sh
 
 print_heading "Copy RabbitMQ Repo file"
 cp rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo &>>log_file
