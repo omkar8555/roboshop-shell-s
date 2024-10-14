@@ -5,6 +5,8 @@ if  [ -z  "$1" ]; then
   exit 1
   fi
 
+  MYSQL_ROOT_PASSWORD=$1
+
 print_heading "install mysql"
 dnf install mysql-server -y &>>log_file
 status_check $?
@@ -15,5 +17,5 @@ systemctl start mysqld &>>log_file
 status_check $?
 
 print_heading "set mysql password"
-mysql_secure_installation --set-root-pass $1 &>>log_file
+mysql_secure_installation --set-root-pass $MYSQL_ROOT_PASSWORD &>>log_file
 status_check $?
