@@ -11,7 +11,6 @@ mysql -h mysql.rdevopsb72.shop -uroot -pRoboShop@1 < /app/db/$sql_file.sql
 status_check $?
 done
 
-systemctl daemon-reload &>>log_file
-systemctl enable shipping &>>log_file
+print_heading "restart shipping app"
 systemctl restart shipping &>>log_file
 status_check $?
