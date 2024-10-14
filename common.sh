@@ -113,16 +113,19 @@ python_setup() {
 }
 
 golang_setup() {
-  print_heading "install golang"
+  print_heading "Copy Dispatch Service file"
+  cp dispatch.service /etc/systemd/system/dispatch.service &>>$log_file
+  status_check $?
+
+  print_heading "Install GoLang"
   dnf install golang -y &>>$log_file
   status_check $?
 
   app_prerequisites
 
-  print_heading "copy download application dependncies"
-  cd /app
-  go mod init dispatch  &>>$log_file
-  go get  &>>$log_file
+  print_heading "Copy Download Application Dependencies"
+  go mod init dispatch &>>$log_file
+  go get &>>$log_file
   go build &>>$log_file
   status_check $?
 
