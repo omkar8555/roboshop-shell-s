@@ -48,9 +48,11 @@ else
 }
 
 systemd_setup() {
-  print_heading "copy the  service file"
-  cp $script_path/$app_name.service  /etc/systemd/system/$app_name.service &>>$log_file
-  print_heading "start application services"
+   print_heading "Copy the Service File"
+    cp $scripts_path/$app_name.service /etc/systemd/system/$app_name.service &>>$log_file
+    sed -i -e "s/RABBITMQ_PASSWORD/${RABBITMQ_PASSWORD}/" /etc/systemd/system/$app_name.service &>>$log_file
+    status_check $?
+
   systemctl daemon-reload &>>$log_file
   systemctl enable $app_name &>>$log_file
   systemctl restart $app_name &>>$log_file
