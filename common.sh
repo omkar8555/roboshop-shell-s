@@ -111,3 +111,21 @@ python_setup() {
 
 
 }
+
+golang_setup() {
+  print_heading "install golang"
+  dnf install golang -y &>>$log_file
+  status_check $?
+
+  app_prerequisites
+
+  print_heading "copy download application dependncies"
+  cd /app
+  go mod init dispatch  &>>$log_file
+  go get  &>>$log_file
+  go build &>>$log_file
+  status_check $?
+
+  systemd_setup
+
+}
