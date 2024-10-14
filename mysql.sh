@@ -1,6 +1,6 @@
 source common.sh
 
-if [-z "$1"]; then
+if  [ -z  "$1" ]; then
   echo input mysql password is missing
   exit 1
   fi
