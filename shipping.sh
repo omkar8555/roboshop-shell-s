@@ -1,5 +1,5 @@
 source common.sh
-add_name=shipping
+app_name=shipping
 
 
 maven_setup
