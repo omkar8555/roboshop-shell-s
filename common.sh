@@ -2,9 +2,9 @@ color="\e[32m"
 no_color="\e[0m"
 
 log_file=/tmp/roboshop.log
-rm -rf $log-file
+rm -rf $log_file
 
-script_path=$(pwd)
+scripts_path=$(pwd)
 
 
 
