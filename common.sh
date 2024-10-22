@@ -78,18 +78,18 @@ nodejs_setup() {
 }
 
 maven_setup() {
-  print_heading "copy shipping service"
-  cp shipping.service /etc/systemd/system/$app_name.service &>>log_file
-  status_check $?
-  dnf install maven -y &>>log_file
+  print_heading "Install Maven"
+    dnf install maven -y &>>$log_file
+    status_check $?
+
 
   app_prerequisites
 
-cd /app
-mvn clean package &>>log_file
-mv target/$app_name-1.0.jar $app_name.jar &>>log_file
-dnf install mysql -y &>>log_file
-status_check $?
+print_heading "Download Application Dependencies"
+  mvn clean package &>>$log_file
+  mv target/$app_name-1.0.jar $app_name.jar &>>$log_file
+  status_check $?
+
 
 systemd_setup
 
