@@ -96,18 +96,17 @@ systemd_setup
 }
 
 python_setup() {
-   print_heading " install python3 file "
-  dnf install python3 gcc python3-devel -y &>>log_file
-  status_check $?
+    print_heading "Install Python"
+     dnf install python3 gcc python3-devel -y &>>$log_file
+     status_check $?
 
-  app_prerequisites
+     app_prerequisites
 
-  cd /app
-  pip3 install -r requirements.txt &>>log_file
-  status_check $?
+     print_heading "Download Application Dependencies"
+     pip3 install -r requirements.txt &>>$log_file
+     status_check $?
 
-
-  systemd_setup
+     systemd_setup
 
 
 }
